@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Макет: привлечение абитуриентов</title>
+<style>
+:root{--bg:#0f1115;--card:#181b22;--line:#2a2f3a;--tx:#eef0f4;--mut:#9aa3b2;--acc:#e5322d;--ok:#2fbf71}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:16px}
+.wrap{max-width:760px;margin:0 auto}
+h1{font-size:22px;margin:8px 0 4px}
+h2{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin:32px 0 10px}
+.note{color:var(--mut);font-size:14px;margin:0 0 12px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.tg{background:#1e2430;border-radius:16px 16px 16px 4px;padding:14px 16px;max-width:520px;white-space:pre-line}
+.tg b{color:#fff}
+.btn{display:inline-block;margin-top:10px;background:var(--acc);color:#fff;border-radius:10px;padding:10px 16px;font-weight:600;text-decoration:none;border:0;font-size:16px}
+.grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+.course{border:1px solid var(--line);border-radius:12px;padding:12px}
+.course .p{color:var(--mut);font-size:14px}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0f1115;color:var(--tx);font-size:16px;margin:6px 0}
+label.c{display:flex;gap:8px;font-size:13px;color:var(--mut);align-items:flex-start;margin:8px 0}
+.warn{border-left:3px solid var(--acc);padding:8px 12px;color:var(--mut);font-size:14px;margin-top:12px}
+ul{padding-left:20px;margin:6px 0}
+.tabs{display:flex;gap:6px;margin:14px 0 0;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;color:var(--mut);padding:10px 14px;font-size:15px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--tx);border-bottom-color:var(--acc)}
+.rd{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.tab{display:block}
+.pane{display:none}
+#r1:checked ~ #p1{display:block}
+#r2:checked ~ #p2{display:block}
+#r1:checked ~ .tabs label[for=r1],#r2:checked ~ .tabs label[for=r2]{color:var(--tx);border-bottom-color:var(--acc)}
+.seg{display:flex;gap:8px;margin:8px 0}
+.seg button{flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1115;color:var(--mut);font-size:15px;cursor:pointer}
+.seg button.on{border-color:var(--acc);color:var(--tx)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="badge">МАКЕТ</span>
+<h1>Привлечение абитуриентов и студентов</h1>
+<p class="note">Макет: сообщение в канале и страница с формой заявки. Тексты и цены ориентировочные, итоговые условия согласуются с университетом.</p>
+
+<input type="radio" name="tab" id="r1" class="rd" checked>
+<input type="radio" name="tab" id="r2" class="rd">
+<div class="tabs">
+  <label class="tab" for="r1">Курсы</label>
+  <label class="tab" for="r2">Университет</label>
+</div>
+<div id="p1" class="pane">
+<h2>Сообщение подписчикам</h2>
+<div class="tg"><b>Продвижение на маркетплейсах: курс на 3 месяца</b>
+Если вы продаёте на Wildberries или Ozon и хотите разобраться с карточками, рекламой и аналитикой, есть курс в Академии Synergy.
+
+• формат: онлайн
+• есть рассрочка
+• документ по итогам курса
+
+Подробнее и бесплатная консультация менеджера по ссылке ниже.
+<a class="btn" href="#form">Узнать подробнее</a>
+<span style="display:block;margin-top:10px;color:#8b94a5;font-size:12px">Вы получили это сообщение, потому что подписались на канал. Отписаться: ответьте «стоп».</span></div>
+
+<h2>Страница после перехода</h2>
+<div class="card">
+  <h2 style="margin-top:0">Курсы для тех, кто продаёт онлайн</h2>
+  <p class="note">Выберите программу и оставьте контакт. Менеджер университета свяжется и ответит на вопросы.</p>
+  <div class="grid">
+    <div class="course"><b>Продвижение на маркетплейсах</b><div class="p">3 мес · от ~31 000 ₽ · рассрочка</div></div>
+    <div class="course"><b>Менеджер маркетплейсов + ИИ</b><div class="p">6 мес · от ~49 000 ₽ · рассрочка</div></div>
+    <div class="course"><b>SMM-специалист + ИИ</b><div class="p">6 мес · от ~50 000 ₽ · рассрочка</div></div>
+    <div class="course"><b>Fashion-бренд: запуск</b><div class="p">цену и формат уточняйте у менеджера</div></div>
+  </div>
+  <p class="note" style="margin-top:10px">Цены ориентировочные. Точные условия уточняйте у менеджера.</p>
+
+  <form id="form" onsubmit="event.preventDefault();document.getElementById('ok').style.display='block'">
+    <select><option>Продвижение на маркетплейсах</option><option>Менеджер маркетплейсов + ИИ</option><option>SMM-специалист + ИИ</option><option>Fashion-бренд: запуск</option></select>
+    <input placeholder="Имя" required>
+    <input placeholder="Телефон или Telegram" required>
+    <label class="c"><input type="checkbox" required style="width:auto;margin-top:3px"> Согласен на обработку персональных данных и передачу контакта представителю университета. <u>Политика</u></label>
+    <button class="btn" type="submit">Получить консультацию</button>
+    <div id="ok" style="display:none;color:var(--ok);margin-top:10px">Спасибо! Контакт принят, с вами свяжутся. (Демо-версия, заявка не отправляется.)</div>
+  </form>
+  <div class="warn">Сайт партнёра университета, не официальный сайт. Информация о программах уточняется у представителя.</div>
+</div>
+
+
+</div>
+
+<div id="p2" class="pane">
+<h2>Аудитории и их вопросы</h2>
+<p class="note">Обучение выбирают дольше, чем курс, и часто вместе с родителями. Поэтому для разных аудиторий нужны свои сообщения, а в форме есть контакт родителя.</p>
+
+<div class="card">
+  <b>Кому и о чём рассказываем</b>
+  <div class="grid" style="margin-top:10px">
+    <div class="course"><b>Родителям</b><div class="p">Стоимость и рассрочка, диплом, условия поступления, документы, консультация менеджера.</div></div>
+    <div class="course"><b>Выпускникам 9 и 11 классов</b><div class="p">Какие профессии, какие направления, как проходит учёба, что после выпуска. Заявка с контактом родителя.</div></div>
+    <div class="course"><b>Взрослым (магистратура, MBA)</b><div class="p">Карьера, формат для работающих, срок обучения, документ.</div></div>
+    <div class="course"><b>Международные программы</b><div class="p">Отдельная страница по странам и языкам.</div></div>
+  </div>
+</div>
+
+<h2>Сообщение родителям</h2>
+<div class="tg"><b>Выбираете колледж или вуз после 9 или 11 класса?</b>
+Помогаем разобраться: какие направления есть, сколько стоит обучение, какие документы нужны и как проходит поступление.
+
+• бесплатная консультация менеджера университета
+• можно уточнить рассрочку и условия
+• ответим на вопросы родителей
+
+<a class="btn" href="#form2">Получить консультацию</a>
+<span style="display:block;margin-top:10px;color:#8b94a5;font-size:12px">Реклама. Информация о программах и условиях уточняется у представителя университета.</span></div>
+
+<h2>Страница после перехода</h2>
+<div class="card">
+  <h2 style="margin-top:0">Поступление в университет: консультация</h2>
+  <p class="note">Выберите уровень и оставьте контакт. Менеджер университета свяжется и расскажет про программы, стоимость и сроки подачи.</p>
+  <div class="grid">
+    <div class="course"><b>Колледж (после 9 класса)</b><div class="p">стоимость: уточняйте у менеджера</div></div>
+    <div class="course"><b>Бакалавриат (после 11 класса)</b><div class="p">стоимость: уточняйте у менеджера</div></div>
+    <div class="course"><b>Магистратура</b><div class="p">стоимость: уточняйте у менеджера</div></div>
+    <div class="course"><b>MBA</b><div class="p">стоимость: уточняйте у менеджера</div></div>
+  </div>
+
+  <form id="form2" onsubmit="event.preventDefault();document.getElementById('ok2').style.display='block'">
+    <select><option>Колледж</option><option>Бакалавриат</option><option>Магистратура</option><option>MBA</option><option>Другое направление</option></select>
+    <select><option>Я родитель</option><option>Я абитуриент (18+)</option><option>Я абитуриент, контакт родителя ниже</option></select>
+    <input placeholder="Имя" required>
+    <input placeholder="Телефон или Telegram (родителя, если абитуриенту нет 18)" required>
+    <input placeholder="Город или страна">
+    <label class="c"><input type="checkbox" required style="width:auto;margin-top:3px"> Согласен на обработку персональных данных и передачу контакта представителю университета. Если абитуриенту нет 18 лет, заявку оставляет родитель или с его согласия. <u>Политика</u></label>
+    <button class="btn" type="submit">Получить консультацию</button>
+    <div id="ok2" style="display:none;color:var(--ok);margin-top:10px">Спасибо! Контакт принят. (Демо-версия, заявка не отправляется.)</div>
+  </form>
+  <div class="warn">Сайт партнёра университета, не официальный сайт. Условия поступления и стоимость уточняйте у представителя.</div>
+</div>
+</div>
+</div>
+</body>
+</html>
