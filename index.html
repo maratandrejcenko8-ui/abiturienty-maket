@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Поступление и обучение: бесплатная консультация</title>
 <style>
-:root{--bg:#0f1115;--card:#181b22;--line:#2a2f3a;--tx:#eef0f4;--mut:#9aa3b2;--acc:#e5322d;--ok:#2fbf71}
+:root{--bg:#1b1f26;--card:#252a33;--line:#363c48;--tx:#f2f4f7;--mut:#aab1be;--acc:#fc734d;--ok:#2fbf71}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;padding:16px 16px 48px}
 .wrap{max-width:760px;margin:0 auto}
@@ -18,8 +18,8 @@ h2{font-size:20px;margin:34px 0 12px}
 .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
 .item b{display:block;margin-bottom:2px}
 .item span{color:var(--mut);font-size:14px}
-.btn{display:inline-block;background:var(--acc);color:#fff;border-radius:12px;padding:13px 20px;font-weight:600;text-decoration:none;border:0;font-size:16px;cursor:pointer}
-input[type=text],input[type=tel],select{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:#0f1115;color:var(--tx);font-size:16px;margin:6px 0}
+.btn{display:inline-block;background:var(--acc);color:#0a1430;border-radius:12px;padding:13px 20px;font-weight:600;text-decoration:none;border:0;font-size:16px;cursor:pointer}
+input[type=text],input[type=tel],select{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:#1b1f26;color:var(--tx);font-size:16px;margin:6px 0}
 label.c{display:flex;gap:8px;font-size:13px;color:var(--mut);align-items:flex-start;margin:10px 0}
 .note{color:var(--mut);font-size:13px}
 .rd{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
@@ -30,10 +30,11 @@ label.c{display:flex;gap:8px;font-size:13px;color:var(--mut);align-items:flex-st
 #r1:checked ~ .tabs label[for=r1],#r2:checked ~ .tabs label[for=r2]{color:var(--tx);border-bottom-color:var(--acc)}
 .steps{counter-reset:s;list-style:none;padding:0;margin:0}
 .steps li{counter-increment:s;display:flex;gap:12px;margin:12px 0;align-items:flex-start}
-.steps li:before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;text-align:center;line-height:28px;font-weight:700;font-size:14px}
+.steps li:before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#0a1430;text-align:center;line-height:28px;font-weight:700;font-size:14px}
 .ok{display:none;color:var(--ok);margin-top:12px}
 footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
-.cta{display:grid;gap:10px}.cta .btn{text-align:center;display:block}.btn2{background:#232834;border:1px solid var(--line)}
+.cta{display:grid;gap:10px}.cta .btn{text-align:center;display:block}.btn2{background:#2f3541;color:#f2f4f7;border:1px solid var(--line)}
+.item .pr{display:block;color:var(--tx);font-weight:700;font-size:15px;margin-top:6px}.item small{display:block;color:var(--mut);font-size:13px;margin-top:2px}.item .tg{display:inline-block;font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -59,6 +60,19 @@ footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(
     <div class="item"><b>Документ на Госуслугах</b><span>Сведения об обучении отображаются в личном кабинете Госуслуг.</span></div>
     <div class="item"><b>Варианты платежей</b><span>Специалист подберёт удобный способ оплаты.</span></div>
   </div>
+
+  <h2>Популярные программы</h2>
+  <div class="grid">
+    <div class="item"><span class="tg">Курс · 2 мес</span><b>Искусственный интеллект в маркетинге</b><span>Анализ, тексты и автоматизация рутины с помощью ИИ.</span><span class="pr">20 000 ₽</span><small>при единовременной оплате</small></div>
+    <div class="item"><span class="tg">Курс · 3 мес</span><b>Продвижение на маркетплейсах</b><span>Карточки, реклама, отзывы, рост продаж.</span><span class="pr">24 000 ₽</span><small>при единовременной оплате</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Менеджер маркетплейсов</b><span>Работа с Wildberries и Ozon с нуля.</span><span class="pr">198 000 ₽</span><small>первый взнос от 49 500 ₽ (25%)</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Интернет-маркетолог</b><span>Реклама, аналитика, воронки продаж.</span><span class="pr">248 250 ₽</span><small>первый взнос от 62 063 ₽ (25%)</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Python-разработчик</b><span>Программирование для старта в IT.</span><span class="pr">228 900 ₽</span><small>первый взнос от 57 225 ₽ (25%)</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Веб-дизайнер</b><span>Дизайн сайтов и интерфейсов.</span><span class="pr">232 890 ₽</span><small>первый взнос от 58 223 ₽ (25%)</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Бизнес-аналитик</b><span>Анализ данных для бизнеса.</span><span class="pr">247 500 ₽</span><small>первый взнос от 61 875 ₽ (25%)</small></div>
+    <div class="item"><span class="tg">Профессия</span><b>Менеджер проектов</b><span>Управление проектами и командами.</span><span class="pr">226 590 ₽</span><small>первый взнос от 56 648 ₽ (25%)</small></div>
+  </div>
+  <p class="note" style="margin-top:10px">Цены ориентировочные, по прайсу партнёра. Актуальную стоимость, скидки и рассрочку называет специалист приёмной комиссии.</p>
 
   <h2>Направления</h2>
   <div class="grid">
@@ -103,6 +117,24 @@ footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(
     <div class="item"><b>Отсрочка от армии</b><span>Для студентов при поступлении в вуз.</span></div>
     <div class="item"><b>Льготные условия</b><span>Условия для поступающих уточняет специалист приёмной комиссии.</span></div>
   </div>
+
+  <h2>Популярные направления</h2>
+  <div class="grid">
+    <div class="item"><span class="tg">Бакалавриат</span><b>Искусственный интеллект и большие данные</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Веб-разработка</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Интернет-маркетинг</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Управление и технологии интернет-продаж на маркетплейсах</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>UX/UI-дизайн</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Геймдизайн и разработка игр</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Тестирование и DevOps</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Бренд-менеджмент в медиапространстве</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Стартапы и инвестиции</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Full-stack разработка</b><span class="pr">80 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Бакалавриат</span><b>Белый хакер (Penetration tester)</b><span class="pr">80 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
+    <div class="item"><span class="tg">Магистратура</span><b>Интернет-маркетинг</b><span class="pr">45 000 ₽ за семестр</span><small>2 года 5 месяцев</small></div>
+    <div class="item"><span class="tg">Магистратура</span><b>Электронный бизнес и цифровые инновации</b><span class="pr">45 000 ₽ за семестр</span><small>2 года 5 месяцев</small></div>
+  </div>
+  <p class="note" style="margin-top:10px">Стоимость указана за один семестр, по прайсу партнёра. Точную стоимость, скидки и условия поступления называет специалист приёмной комиссии.</p>
 
   <h2>Уровни обучения</h2>
   <div class="grid">
