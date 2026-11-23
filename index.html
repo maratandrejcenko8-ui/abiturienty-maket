@@ -3,173 +3,309 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Поступление и обучение: бесплатная консультация</title>
+<title>Памятка: поступление в колледж и вуз</title>
 <style>
-:root{--bg:#1b1f26;--card:#252a33;--line:#363c48;--tx:#f2f4f7;--mut:#aab1be;--acc:#fc734d;--ok:#2fbf71}
+:root{--bg:#0f1115;--card:#181b22;--line:#2a2f3a;--tx:#eef0f4;--mut:#9aa3b2;--acc:#e5322d;--ok:#2fbf71}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;padding:16px 16px 48px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:16px}
 .wrap{max-width:760px;margin:0 auto}
-h1{font-size:28px;line-height:1.2;margin:20px 0 8px}
-h2{font-size:20px;margin:34px 0 12px}
-.lead{color:var(--mut);margin:0 0 16px;max-width:60ch}
+h1{font-size:22px;margin:8px 0 4px}
+h2{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin:30px 0 10px}
+.note{color:var(--mut);font-size:14px;margin:0 0 12px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--mut)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.tg{background:#1e2430;border-radius:16px 16px 16px 4px;padding:14px 16px;max-width:520px;white-space:pre-line}
+.tg b{color:#fff}
+.btn{display:inline-block;margin-top:10px;background:var(--acc);color:#fff;border-radius:10px;padding:10px 16px;font-weight:600;text-decoration:none;border:0;font-size:16px}
 .grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
-.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-.item b{display:block;margin-bottom:2px}
-.item span{color:var(--mut);font-size:14px}
-.btn{display:inline-block;background:var(--acc);color:#0a1430;border-radius:12px;padding:13px 20px;font-weight:600;text-decoration:none;border:0;font-size:16px;cursor:pointer}
-input[type=text],input[type=tel],select{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:#1b1f26;color:var(--tx);font-size:16px;margin:6px 0}
-label.c{display:flex;gap:8px;font-size:13px;color:var(--mut);align-items:flex-start;margin:10px 0}
-.note{color:var(--mut);font-size:13px}
+.course{border:1px solid var(--line);border-radius:12px;padding:12px}
+.course .p{color:var(--mut);font-size:14px}
+input[type=text],input[type=tel],select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0f1115;color:var(--tx);font-size:16px;margin:6px 0}
+label.c{display:flex;gap:8px;font-size:13px;color:var(--mut);align-items:flex-start;margin:8px 0}
+.warn{border-left:3px solid var(--acc);padding:8px 12px;color:var(--mut);font-size:14px;margin-top:12px}
+ul{padding-left:20px;margin:6px 0}
 .rd{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
-.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-top:6px}
-.tab{display:block;color:var(--mut);padding:12px 16px;font-size:16px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs{display:flex;gap:4px;margin:14px 0 0;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{display:block;white-space:nowrap;color:var(--mut);padding:10px 12px;font-size:15px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
 .pane{display:none}
-#r1:checked ~ #p1,#r2:checked ~ #p2{display:block}
-#r1:checked ~ .tabs label[for=r1],#r2:checked ~ .tabs label[for=r2]{color:var(--tx);border-bottom-color:var(--acc)}
-.steps{counter-reset:s;list-style:none;padding:0;margin:0}
-.steps li{counter-increment:s;display:flex;gap:12px;margin:12px 0;align-items:flex-start}
-.steps li:before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#0a1430;text-align:center;line-height:28px;font-weight:700;font-size:14px}
-.ok{display:none;color:var(--ok);margin-top:12px}
-footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
-.cta{display:grid;gap:10px}.cta .btn{text-align:center;display:block}.btn2{background:#2f3541;color:#f2f4f7;border:1px solid var(--line)}
-.item .pr{display:block;color:var(--tx);font-weight:700;font-size:15px;margin-top:6px}.item small{display:block;color:var(--mut);font-size:13px;margin-top:2px}.item .tg{display:inline-block;font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+#r1:checked ~ #p1,#r2:checked ~ #p2,#r3:checked ~ #p3,#r4:checked ~ #p4{display:block}
+#r1:checked ~ .tabs label[for=r1],#r2:checked ~ .tabs label[for=r2],#r3:checked ~ .tabs label[for=r3],#r4:checked ~ .tabs label[for=r4]{color:var(--tx);border-bottom-color:var(--acc)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:6px 0}
+.steps li{counter-increment:s;display:flex;gap:12px;margin:10px 0}
+.steps li:before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;text-align:center;line-height:28px;font-weight:700;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:500}
+
+.mut{color:var(--mut);font-size:13px}
+.reg{color:var(--ok);font-weight:400}
+.pr{color:var(--tx)}
+.tg2{color:var(--acc);font-weight:700}
+.tg3{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 8px;font-size:11px;color:var(--mut);margin-left:4px;white-space:nowrap}
+.tw{overflow-x:auto}
+td div{margin:2px 0}
+.big{font-size:22px;font-weight:700;margin:2px 0}
+.btnrow .btn{margin-right:8px}
+summary{cursor:pointer;font-weight:600;padding:10px 0}
+details{border-top:1px solid var(--line)}
+.course .big{color:var(--tx)}
 </style>
 </head>
 <body>
 <div class="wrap">
+<span class="badge">ПАМЯТКА О НАС</span>
+<h1>Профессии на миллион: как выбрать колледж или вуз без ошибок</h1>
+<p class="note">Коротко о том, как поступить, сколько это стоит и какие есть форматы обучения. Данные по двум вузам: МТИ и МАП.</p>
 
 <input type="radio" name="tab" id="r1" class="rd" checked>
 <input type="radio" name="tab" id="r2" class="rd">
+<input type="radio" name="tab" id="r3" class="rd">
+<input type="radio" name="tab" id="r4" class="rd">
 <div class="tabs">
-  <label class="tab" for="r1">Курсы</label>
-  <label class="tab" for="r2">Университет</label>
+  <label class="tab" for="r1">О нас</label>
+  <label class="tab" for="r2">Как поступить</label>
+  <label class="tab" for="r3">МТИ</label>
+  <label class="tab" for="r4">МАП</label>
 </div>
 
-<!-- ================= КУРСЫ ================= -->
+<!-- ============ О НАС ============ -->
 <div id="p1" class="pane">
-  <h1>Курсы Академии Синергия</h1>
-  <p class="lead">Новая профессия или повышение квалификации онлайн. Бесплатная консультация специалиста приёмной комиссии поможет выбрать программу.</p>
-  <a class="btn" href="#form1">Подать заявку</a>
-
-  <h2>Что вы получаете</h2>
-  <div class="grid">
-    <div class="item"><b>Онлайн-формат</b><span>Учитесь из любой точки, в удобное время.</span></div>
-    <div class="item"><b>Документ об обучении</b><span>Диплом о профессиональной переподготовке или удостоверение о повышении квалификации.</span></div>
-    <div class="item"><b>Документ на Госуслугах</b><span>Сведения об обучении отображаются в личном кабинете Госуслуг.</span></div>
-    <div class="item"><b>Варианты платежей</b><span>Специалист подберёт удобный способ оплаты.</span></div>
-  </div>
-
-  <h2>Популярные программы</h2>
-  <div class="grid">
-    <div class="item"><span class="tg">Курс · 2 мес</span><b>Искусственный интеллект в маркетинге</b><span>Анализ, тексты и автоматизация рутины с помощью ИИ.</span><span class="pr">20 000 ₽</span><small>при единовременной оплате</small></div>
-    <div class="item"><span class="tg">Курс · 3 мес</span><b>Продвижение на маркетплейсах</b><span>Карточки, реклама, отзывы, рост продаж.</span><span class="pr">24 000 ₽</span><small>при единовременной оплате</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Менеджер маркетплейсов</b><span>Работа с Wildberries и Ozon с нуля.</span><span class="pr">198 000 ₽</span><small>первый взнос от 49 500 ₽ (25%)</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Интернет-маркетолог</b><span>Реклама, аналитика, воронки продаж.</span><span class="pr">248 250 ₽</span><small>первый взнос от 62 063 ₽ (25%)</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Python-разработчик</b><span>Программирование для старта в IT.</span><span class="pr">228 900 ₽</span><small>первый взнос от 57 225 ₽ (25%)</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Веб-дизайнер</b><span>Дизайн сайтов и интерфейсов.</span><span class="pr">232 890 ₽</span><small>первый взнос от 58 223 ₽ (25%)</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Бизнес-аналитик</b><span>Анализ данных для бизнеса.</span><span class="pr">247 500 ₽</span><small>первый взнос от 61 875 ₽ (25%)</small></div>
-    <div class="item"><span class="tg">Профессия</span><b>Менеджер проектов</b><span>Управление проектами и командами.</span><span class="pr">226 590 ₽</span><small>первый взнос от 56 648 ₽ (25%)</small></div>
-  </div>
-  <p class="note" style="margin-top:10px">Цены ориентировочные, по прайсу Университета «Синергия». Актуальную стоимость, скидки и рассрочку называет специалист приёмной комиссии.</p>
-
-  <h2>Направления</h2>
-  <div class="grid">
-    <div class="item"><b>Маркетплейсы и маркетинг</b><span>продвижение, менеджер маркетплейсов, SMM, интернет-маркетолог</span></div>
-    <div class="item"><b>Дизайн и IT</b><span>UX/UI, графический и веб-дизайн, Python, аналитика</span></div>
-    <div class="item"><b>Управление и бизнес</b><span>менеджер проектов, бизнес-аналитик, управление персоналом</span></div>
-    <div class="item"><b>Психология и право</b><span>психология, юриспруденция, переподготовка</span></div>
-  </div>
-
-  <h2>Как это работает</h2>
-  <div class="card">
-    <ol class="steps">
-      <li><div><b>Оставьте заявку</b><br><span class="note">Займёт минуту, телефон достаточно.</span></div></li>
-      <li><div><b>Специалист приёмной комиссии позвонит</b><br><span class="note">Расскажет о программах и ответит на вопросы.</span></div></li>
-      <li><div><b>Подберёт программу и варианты платежей</b><br><span class="note">Стоимость зависит от программы, актуальные цены называет специалист.</span></div></li>
-      <li><div><b>Подаёте документы и начинаете обучение</b></div></li>
-    </ol>
-  </div>
-
-  <h2 id="form1">Бесплатная консультация</h2>
-  <div class="card">
-    <div class="cta">
-      <a class="btn" href="https://t.me/marat_ws?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%D0%BC." rel="noopener">Написать в Telegram</a>
-      <a class="btn btn2" href="https://wa.me/message/HVJ7NHFSZW36F1" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn btn2" href="mailto:maratandrejcenko8@mail.ru?subject=%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%D0%BC&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%D0%BC.">Написать на почту</a>
-      <p class="note" style="margin:12px 0 0">Почта: maratandrejcenko8@mail.ru</p>
-      <p class="note" style="margin:8px 0 0">Выберите удобный мессенджер, сообщение откроется готовым. Обращаясь, вы соглашаетесь на обработку персональных данных. <u>Политика</u></p>
-    </div>
-  </div>
+<h2>Чем мы помогаем</h2>
+<div class="card">
+<p style="margin-top:0">Выбор колледжа или вуза определяет профессию на годы вперёд, а на решение остаются считаные месяцы. Выпускники и родители часто не знают, какие бывают формы и программы обучения, какие нужны документы и как подать заявление.</p>
+<p style="margin-bottom:0">Мы объясняем это простым языком и бесплатно: от выбора программы до подачи документов.</p>
 </div>
 
-<!-- ================= УНИВЕРСИТЕТ ================= -->
+<h2>Что мы можем провести для вашей школы</h2>
+<div class="card">
+<div class="grid">
+<div class="course"><b>Онлайн-конференция</b><div class="p">С представителем приёмной комиссии: выпускники и родители задают вопросы напрямую и узнают, как проходит поступление.</div></div>
+<div class="course"><b>Онлайн-экскурсия</b><div class="p">По университету: корпуса, аудитории и студенческая жизнь без выезда из города.</div></div>
+<div class="course"><b>Консультации</b><div class="p">Для выпускников 9 и 11 классов и их родителей: программы, стоимость, документы, сроки.</div></div>
+<div class="course"><b>Подбор программы</b><div class="p">По интересам, формату обучения и бюджету семьи, в том числе онлайн для жителей других регионов.</div></div>
+</div>
+<p class="note" style="margin-top:10px">Формат и дату встречи согласуем с вами заранее.</p>
+</div>
+
+<h2>Вузы в памятке</h2>
+<div class="card">
+<div class="grid">
+<div class="course"><b>МТИ</b><div class="p">Колледж (после 9 и 11 класса) и бакалавриат. Онлайн-формат из любого города, очные программы в Москве.</div></div>
+<div class="course"><b>МАП</b><div class="p">Колледж (после 9 и 11 класса) и бакалавриат. Онлайн-формат с пониженной ценой для регионов РФ и СНГ, очные программы в Москве.</div></div>
+</div>
+</div>
+
+<h2>Главное в цифрах</h2>
+<div class="card">
+<div class="grid">
+<div class="course"><div class="big">от 70 000 ₽</div><div class="p">в год: колледж онлайн в МАП (для регионов РФ от 50 000 ₽)</div></div>
+<div class="course"><div class="big">90 000 ₽</div><div class="p">в год: колледж и бакалавриат онлайн в МТИ</div></div>
+<div class="course"><div class="big">100 000 ₽</div><div class="p">в год: бакалавриат онлайн в МАП (для регионов РФ 60 000 ₽)</div></div>
+<div class="course"><div class="big">9 и 11 класс</div><div class="p">на колледж можно поступать после любого из них</div></div>
+</div>
+<p class="note" style="margin-top:10px">Стоимость указана за один учебный год. Подробные таблицы по программам во вкладках «МТИ» и «МАП».</p>
+</div>
+<h2>Связаться с нами</h2>
+<div class="card"><p class="note" style="margin-top:0">Бесплатная консультация для выпускников и родителей. Подберём программу, расскажем про документы и сроки подачи.</p>
+<div class="btnrow"><a class="btn" href="https://t.me/marat_ws">Написать в Telegram</a><a class="btn" href="https://wa.me/message/HVJ7NHFSZW36F1">WhatsApp</a><a class="btn" href="mailto:maratandrejcenko8@mail.ru">Почта</a></div>
+<p class="note" style="margin-top:12px">Telegram: @marat_ws · maratandrejcenko8@mail.ru</p></div>
+<div class="warn">Памятка информационная и не является официальным документом вуза. Цены и условия приёма уточняйте в приёмной комиссии: они могут меняться.</div>
+</div>
+
+<!-- ============ КАК ПОСТУПИТЬ ============ -->
 <div id="p2" class="pane">
-  <h1>Поступление в университет</h1>
-  <p class="lead">Колледж, бакалавриат, магистратура, MBA, аспирантура, ординатура и международные программы. Бесплатная консультация специалиста приёмной комиссии.</p>
-  <a class="btn" href="#form2">Подать заявку</a>
-
-  <h2>Преимущества обучения</h2>
-  <div class="grid">
-    <div class="item"><b>Колледж без ЕГЭ</b><span>Можно зачислиться без сдачи ЕГЭ.</span></div>
-    <div class="item"><b>Гибридный формат</b><span>Занятия в прямом эфире, как при очной форме, но дистанционно.</span></div>
-    <div class="item"><b>Отсрочка от армии</b><span>Для студентов при поступлении в вуз.</span></div>
-    <div class="item"><b>Льготные условия</b><span>Условия для поступающих уточняет специалист приёмной комиссии.</span></div>
-  </div>
-
-  <h2>Популярные направления</h2>
-  <div class="grid">
-    <div class="item"><span class="tg">Бакалавриат</span><b>Искусственный интеллект и большие данные</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Веб-разработка</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Интернет-маркетинг</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Управление и технологии интернет-продаж на маркетплейсах</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>UX/UI-дизайн</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Геймдизайн и разработка игр</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Тестирование и DevOps</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Бренд-менеджмент в медиапространстве</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Стартапы и инвестиции</b><span class="pr">42 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Full-stack разработка</b><span class="pr">80 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Бакалавриат</span><b>Белый хакер (Penetration tester)</b><span class="pr">80 000 ₽ за семестр</span><small>4 г 6 мес после 11 класса, 3 г 6 мес после СПО или вуза</small></div>
-    <div class="item"><span class="tg">Магистратура</span><b>Интернет-маркетинг</b><span class="pr">45 000 ₽ за семестр</span><small>2 года 5 месяцев</small></div>
-    <div class="item"><span class="tg">Магистратура</span><b>Электронный бизнес и цифровые инновации</b><span class="pr">45 000 ₽ за семестр</span><small>2 года 5 месяцев</small></div>
-  </div>
-  <p class="note" style="margin-top:10px">Стоимость указана за один семестр, по прайсу Университета «Синергия». Точную стоимость, скидки и условия поступления называет специалист приёмной комиссии.</p>
-
-  <h2>Уровни обучения</h2>
-  <div class="grid">
-    <div class="item"><b>Колледж</b><span>после 9 класса</span></div>
-    <div class="item"><b>Бакалавриат</b><span>после 11 класса</span></div>
-    <div class="item"><b>Магистратура и MBA</b><span>для выпускников и работающих, удобный формат</span></div>
-    <div class="item"><b>Аспирантура и ординатура</b><span>для специалистов с профильным образованием</span></div>
-    <div class="item"><b>Международные программы</b><span>Дубай, Китай, Таиланд, Малайзия</span></div>
-    <div class="item"><b>Детский сад и школа</b><span>для родителей</span></div>
-  </div>
-
-  <h2>О чём поговорим на консультации</h2>
-  <div class="card">
-    <ul style="margin:0;padding-left:20px">
-      <li>Какие направления подойдут и что можно выбрать после школы или колледжа.</li>
-      <li>Стоимость обучения и варианты оплаты.</li>
-      <li>Какие нужны документы и как проходит обучение.</li>
-      <li>Варианты трудоустройства после выпуска.</li>
-      <li>Сроки подачи документов и условия поступления.</li>
-    </ul>
-  </div>
-
-  <h2 id="form2">Бесплатная консультация</h2>
-  <div class="card">
-    <div class="cta">
-      <a class="btn" href="https://t.me/marat_ws?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E." rel="noopener">Написать в Telegram</a>
-      <a class="btn btn2" href="https://wa.me/message/HVJ7NHFSZW36F1" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn btn2" href="mailto:maratandrejcenko8@mail.ru?subject=%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E.">Написать на почту</a>
-      <p class="note" style="margin:12px 0 0">Почта: maratandrejcenko8@mail.ru</p>
-      <p class="note" style="margin:8px 0 0">Выберите удобный мессенджер, сообщение откроется готовым. Обращаясь, вы соглашаетесь на обработку персональных данных. <u>Политика</u> Если абитуриенту нет 18 лет, обращается родитель или с его согласия.</p>
-    </div>
-  </div>
+<h2>Шаги поступления</h2>
+<div class="card">
+<ol class="steps">
+<li><div><b>Консультация.</b><div class="note">Рассказываем про программы, формы обучения, стоимость и сроки. Бесплатно, без обязательств.</div></div></li>
+<li><div><b>Выбор программы.</b><div class="note">Колледж после 9 или 11 класса, бакалавриат после 11 класса или колледжа. Форма обучения: очная, очно-заочная или заочная.</div></div></li>
+<li><div><b>Подача документов.</b><div class="note">Заявление и документы подаются онлайн через приёмную комиссию. Если абитуриенту нет 18 лет, заявку подаёт родитель или с его согласия.</div></div></li>
+<li><div><b>Договор и оплата.</b><div class="note">Приёмная комиссия оформляет договор, подбирает удобный график платежей и подтверждает условия.</div></div></li>
+<li><div><b>Зачисление и начало учёбы.</b><div class="note">После зачисления выпускник получает доступ к занятиям в выбранном формате.</div></div></li>
+</ol>
 </div>
 
-<footer>Неофициальный сайт: информация о программах Университета «Синергия». Условия поступления, стоимость и варианты оплаты уточняйте у специалиста приёмной комиссии.</footer>
+<h2>Формы обучения простыми словами</h2>
+<div class="card"><div class="tw"><table>
+<tr><th>Форма</th><th>Как проходит</th></tr>
+<tr><td><b>Очная</b></td><td>Занятия по расписанию. В МТИ и МАП очные программы в Москве; по ряду направлений есть очная форма онлайн с вечерними вебинарами в прямом эфире.</td></tr>
+<tr><td><b>Очно-заочная</b></td><td>Часть занятий в формате онлайн, остальное время студент работает самостоятельно. Подходит тем, кто совмещает учёбу с работой или живёт в другом городе.</td></tr>
+<tr><td><b>Заочная</b></td><td>Больше самостоятельного обучения, занятия и аттестация дистанционно.</td></tr>
+</table></div>
+<p class="note" style="margin-top:8px">Описание общее. Точный график занятий для каждой программы уточняйте у приёмной комиссии.</p></div>
+
+<h2>Уровни обучения</h2>
+<div class="card"><div class="grid">
+<div class="course"><b>Колледж (СПО)</b><div class="p">После 9 или 11 класса. Срок зависит от программы: от 11 месяцев до 4 лет.</div></div>
+<div class="course"><b>Бакалавриат</b><div class="p">После 11 класса, колледжа или другого вуза. Срок 3,5–4,5 года в зависимости от формы и предыдущего образования.</div></div>
+</div></div>
+
+<h2>Какие документы обычно нужны</h2>
+<div class="card"><ul>
+<li>Паспорт и документ об образовании (аттестат или диплом).</li>
+<li>Фотографии и заявление о приёме.</li>
+<li>Для несовершеннолетних, как правило, также паспорт родителя и его согласие.</li>
+</ul>
+<p class="note" style="margin-top:8px">Это стандартный набор. Полный перечень называет приёмная комиссия, она же помогает подать документы онлайн.</p></div>
+
+<h2>Деньги: что важно знать</h2>
+<div class="card"><ul>
+<li><b>Цена указана за год,</b> а не за весь срок. Итог считается как цена за год, умноженная на срок обучения.</li>
+<li><b>Региональные цены ниже.</b> В МАП для жителей регионов РФ и СНГ онлайн-обучение дешевле, чем для Москвы.</li>
+<li><b>Варианты оплаты.</b> Платежи можно подобрать так, чтобы нагрузка на семью была комфортнее.</li>
+<li><b>Скидки.</b> В МТИ действует положение о скидках, условия уточняйте у приёмной комиссии.</li>
+<li><b>Кредит с господдержкой</b> недоступен по направлениям со знаком * (МТИ). Основание: распоряжение Правительства РФ от 17 ноября 2025 г. № 3326-р.</li>
+</ul></div>
+
+<h2>Что ещё спрашивают родители</h2>
+<div class="card"><ul>
+<li><b>Нужен ли ЕГЭ.</b> В колледж зачисляют без ЕГЭ. Условия для бакалавриата уточняйте у приёмной комиссии.</li>
+<li><b>Отсрочка от армии</b> положена студентам очной формы на аккредитованных программах. Подробности и статус аккредитации программы уточняйте заранее.</li>
+<li><b>Можно ли учиться из другого города.</b> Да, у обоих вузов есть онлайн-форматы.</li>
+<li><b>Какой выдаётся диплом.</b> Это зависит от аккредитации программы, поэтому её статус стоит уточнить до подачи документов.</li>
+</ul></div>
+<h2>Связаться с нами</h2>
+<div class="card"><p class="note" style="margin-top:0">Бесплатная консультация для выпускников и родителей. Подберём программу, расскажем про документы и сроки подачи.</p>
+<div class="btnrow"><a class="btn" href="https://t.me/marat_ws">Написать в Telegram</a><a class="btn" href="https://wa.me/message/HVJ7NHFSZW36F1">WhatsApp</a><a class="btn" href="mailto:maratandrejcenko8@mail.ru">Почта</a></div>
+<p class="note" style="margin-top:12px">Telegram: @marat_ws · maratandrejcenko8@mail.ru</p></div>
+<div class="warn">Памятка информационная и не является официальным документом вуза. Цены и условия приёма уточняйте в приёмной комиссии: они могут меняться.</div>
+</div>
+
+<!-- ============ МТИ ============ -->
+<div id="p3" class="pane">
+<h2>МТИ: коротко</h2>
+<div class="card"><div class="grid">
+<div class="course"><b>Колледж (СПО)</b><div class="big">от 90 000 ₽</div><div class="p">в год, онлайн. Срок от 11 месяцев до 4 лет. Очная форма: набор закрыт.</div></div>
+<div class="course"><b>Бакалавриат онлайн</b><div class="big">90 000 ₽</div><div class="p">в год, очно-заочная и заочная форма. Срок от 3 до 4,5 лет.</div></div>
+<div class="course"><b>Бакалавриат очно</b><div class="big">330 000 ₽</div><div class="p">в год, Москва (м. Сокол, м. Варшавская). Очная форма онлайн с вечерними вебинарами в прямом эфире: 220 000 ₽.</div></div>
+</div>
+<p class="note" style="margin-top:10px">Цены действуют с 01.03.2026. Знак * отмечает направления без кредита с господдержкой.</p></div>
+
+<h2>Колледж (СПО): после 9 и 11 класса</h2>
+<div class="card"><div class="tw"><table><tr><th style="width:42%">Специальность</th><th>Формат, срок и стоимость в год</th></tr><tr><td><b>Банковское дело</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">38.02.07</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Графический дизайнер</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span> <span class="tg3">уточнить аккредитацию</span><div class="mut">54.01.20</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Делопроизводитель</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">46.01.03</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 2 г; 11 кл — 11 мес<br><b class="pr">160 000 ₽</b></div></td></tr>
+<tr><td><b>Дошкольное образование</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span> <span class="tg3">уточнить аккредитацию</span><div class="mut">44.02.01</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 4 г; 11 кл — 3 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Монтаж, наладка и эксплуатация электрооборудования промышленных и гражданских сооружений</b><div class="mut">08.02.09</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Оператор информационных систем и ресурсов</b><div class="mut">09.01.03</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Строительство и эксплуатация зданий и сооружений</b><div class="mut">08.02.01</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 4 г; 11 кл — 3 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Технология машиностроения</b><div class="mut">15.02.16</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 4 г; 11 кл — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Торговое дело</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">09.02.07</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Экономика и бухгалтерский учёт</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">38.02.01</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Чертежник-конструктор</b><div class="mut">15.01.22</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 2 г; 11 кл — 11 мес<br><b class="pr">160 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Разработка и управление программным обеспечением</b><div class="mut">09.02.11</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 4 г; 11 кл — 3 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Техническая эксплуатация и сопровождение информационных систем</b><div class="mut">09.02.12</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Операционная деятельность в логистике</b><div class="mut">38.02.03</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г; 11 кл — 2 г<br><b class="pr">90 000 ₽</b></div></td></tr></table></div></div>
+
+<h2>Бакалавриат</h2>
+<div class="card"><div class="tw"><table><tr><th style="width:42%">Направление</th><th>Формат, срок и стоимость в год</th></tr><tr><td><b>Дизайн</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span> <span class="tg3">уточнить аккредитацию</span><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Жилищное хозяйство и коммунальная инфраструктура</b><div class="mut">38.03.10</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Менеджмент</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">38.03.02</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr>
+<tr><td><b>Педагогическое образование</b><div class="mut">44.03.01</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> <b class="pr">220 000 ₽</b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr>
+<tr><td><b>Психология</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">37.03.01</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Экономика</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">38.03.01</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr>
+<tr><td><b>Информационные системы и технологии</b><div class="mut">09.03.02</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr>
+<tr><td><b>Прикладная информатика</b><div class="mut">09.03.03</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Прикладная математика и информатика</b> <span class="tg3">уточнить аккредитацию</span><div class="mut">01.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Управление в технических системах</b><div class="mut">27.03.04</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Архитектура   Направление закрыто</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span> <span class="tg3">уточнить аккредитацию</span><div class="mut">07.03.01</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Строительство</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span><div class="mut">08.03.01</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr>
+<tr><td><b>Теплоэнергетика и теплотехника</b><div class="mut">13.03.01</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Технологические машины и оборудование</b><div class="mut">15.03.02</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div></td></tr>
+<tr><td><b>Техносферная безопасность</b><div class="mut">20.03.01</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Нефтегазовое дело   Направление закрыто</b> <span class="tg2" title="Кредит с господдержкой недоступен">*</span> <span class="tg3">уточнить аккредитацию</span><div class="mut">21.03.01</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Электроэнергетика и электротехника</b><div class="mut">13.03.02</div></td><td><div><b>Очная форма онлайн (вечерние вебинары в прямом эфире):</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">220 000 ₽</b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 м; НПО — 4 г; СПО / ВО — 3 г 6 м; после СПО МТИ — 3 г<br><b class="pr">90 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл / НПО / СПО / ВО — 4 г<br><b class="pr">330 000 ₽</b></div></td></tr></table></div>
+<p class="note" style="margin-top:8px">В МТИ по некоторым направлениям список профилей длинный, показаны направления. Профили уточняйте у приёмной комиссии. Адрес очного обучения указан по аналогии с прошлым набором, итоговое распределение по площадкам определяется к старту обучения.</p></div>
+<h2>Связаться с нами</h2>
+<div class="card"><p class="note" style="margin-top:0">Бесплатная консультация для выпускников и родителей. Подберём программу, расскажем про документы и сроки подачи.</p>
+<div class="btnrow"><a class="btn" href="https://t.me/marat_ws">Написать в Telegram</a><a class="btn" href="https://wa.me/message/HVJ7NHFSZW36F1">WhatsApp</a><a class="btn" href="mailto:maratandrejcenko8@mail.ru">Почта</a></div>
+<p class="note" style="margin-top:12px">Telegram: @marat_ws · maratandrejcenko8@mail.ru</p></div>
+<div class="warn">Памятка информационная и не является официальным документом вуза. Цены и условия приёма уточняйте в приёмной комиссии: они могут меняться.</div>
+</div>
+
+<!-- ============ МАП ============ -->
+<div id="p4" class="pane">
+<h2>МАП: коротко</h2>
+<div class="card"><div class="grid">
+<div class="course"><b>Колледж онлайн</b><div class="big">от 70 000 ₽</div><div class="p">в год. Регионы РФ от 50 000 ₽, СНГ от 40 000 ₽. IT-специальности и маркетплейсы: 90 000 ₽ (регионы 60 000 ₽, СНГ 50 000 ₽).</div></div>
+<div class="course"><b>Колледж очно</b><div class="big">220 000 ₽</div><div class="p">в год, Москва (м. Измайловская).</div></div>
+<div class="course"><b>Бакалавриат онлайн</b><div class="big">100 000 ₽</div><div class="p">в год. Регионы РФ 60 000 ₽, СНГ 50 000 ₽.</div></div>
+<div class="course"><b>Бакалавриат очно</b><div class="big">320–400 000 ₽</div><div class="p">в год, Москва (м. Аэропорт).</div></div>
+</div>
+<p class="note" style="margin-top:10px">Цены и набор по данным от 28.08.2026, актуальность уточняйте.</p></div>
+
+<h2>Самые востребованные направления</h2>
+<div class="card"><div class="grid">
+<div class="course"><b>Колледж</b><div class="p">1. Юриспруденция<br>2. Торговое дело<br>3. Туризм и гостеприимство</div></div>
+<div class="course"><b>Бакалавриат</b><div class="p">1. Юриспруденция (уголовно-правовой профиль)<br>2. Менеджмент (управление персоналом)<br>3. Государственное и муниципальное управление</div></div>
+</div></div>
+
+<h2>Колледж (СПО): после 9 и 11 класса</h2>
+<div class="card"><div class="tw"><table><tr><th style="width:42%">Специальность</th><th>Формат, срок и стоимость в год</th></tr><tr><td><b>Юриспруденция</b><div class="mut">40.02.04</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 1 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Дизайн (по отраслям)</b><div class="mut">54.02.01</div></td><td><div><b>Очная, Москва:</b> 9 кл — 3 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Художник по костюмам</b><div class="mut">29.01.04</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Исполнитель художественно-оформительских работ</b><div class="mut">54.01.01</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Сетевое и системное администрирование</b><div class="mut">09.02.06</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 4 г 10 мес; 11 кл — 3 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 3 г 10 мес<br><b class="pr">220 000 ₽</b></div><div class="mut">Очная, 11 кл: набор закрыт</div></td></tr>
+<tr><td><b>Интеллектуальные интегрированные системы</b><div class="mut">09.02.08</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div class="mut">Очная, 11 кл: набор закрыт</div></td></tr>
+<tr><td><b>Веб-разработка</b><div class="mut">09.02.09</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div class="mut">Очная, 11 кл: набор закрыт</div></td></tr>
+<tr><td><b>Разработка компьютерные игр, дополненной и виртуальной реальности</b><div class="mut">09.02.10</div></td><td><div><b>Онлайн, очно-заочная:</b> 9 кл — 4 г 10 мес; 11 кл — 3 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 3 г 10 мес<br><b class="pr">220 000 ₽</b></div><div class="mut">Очная, 11 кл: набор закрыт</div></td></tr>
+<tr><td><b>Оператор информационных систем и ресурсов</b><div class="mut">09.01.03</div></td><td><div><b>Очная, Москва:</b> 11 кл — 10 мес<br><b class="pr">220 000 ₽</b></div><div class="mut">Очная, 11 кл: набор закрыт</div></td></tr>
+<tr><td><b>Торговое дело</b><div class="mut">38.02.08</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 1 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Торговое дело</b><div class="mut">Специалист торгового дела (CRM-маркетолог)</div><div class="mut">38.02.08</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Торговое дело</b><div class="mut">Специалист торгового дела (Менеджер маркетплейсов)</div><div class="mut">38.02.08</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Торговое дело</b><div class="mut">Специалист торгового дела (Интернет-маркетинг)</div><div class="mut">38.02.08</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">90 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Туризм и гостеприимство</b><div class="mut">43.02.16</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 1 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Делопроизводитель (закрыто)</b><div class="mut">41.06.03</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Повар, кондитер</b><div class="mut">43.01.09</div></td><td><div><b>Очная, Москва:</b> 9 кл — 3 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Мастер флористического сервиса</b><div class="mut">43.01.11</div></td><td><div class="mut">Набор закрыт</div></td></tr>
+<tr><td><b>Экономика и бухгалтерский учет (по отраслям)</b><div class="mut">38.02.01</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div><div><b>Очная, Москва:</b> 9 кл — 2 г 10 мес<br><b class="pr">220 000 ₽</b></div><div><b>Очная, Москва:</b> 11 кл — 1 г 10 мес<br><b class="pr">220 000 ₽</b></div></td></tr>
+<tr><td><b>Банковское дело</b><div class="mut">38.02.07</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div></td></tr>
+<tr><td><b>Страховое дело (по отраслям)</b><div class="mut">38.02.02</div></td><td><div><b>Онлайн, заочная:</b> 9 кл — 3 г 10 мес; 11 кл — 2 г 10 мес<br><b class="pr">70 000 ₽<span class="reg"> · регионы РФ 50 000 ₽ · СНГ 40 000 ₽</span></b></div><div class="mut">Очная форма: набор закрыт</div></td></tr></table></div></div>
+
+<h2>Бакалавриат</h2>
+<div class="card"><div class="tw"><table><tr><th style="width:42%">Профиль (направление)</th><th>Формат, срок и стоимость в год</th></tr><tr><td><b>Менеджмент в индустрии гостеприимства и ресторанного бизнеса</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Менеджмент в спортивной индустрии</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Управление персоналом организации</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Логистика и управление цепями поставок</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Проектный менеджмент</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> ТОЛЬКО на базе 2 ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Туризм, сервис и развитие территорий</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">350 000 ₽</b></div></td></tr>
+<tr><td><b>Государственная и муниципальная служба</b><div class="mut">Государственное и муниципальное управление</div><div class="mut">38.03.04</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> ТОЛЬКО на базе 2 ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">380 000 ₽</b></div></td></tr>
+<tr><td><b>Менеджмент в предпринимательской деятельности</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">400 000 ₽</b></div></td></tr>
+<tr><td><b>Финансовые рынки и кредитные организации</b><div class="mut">Экономика</div><div class="mut">38.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Финансы в корпорации</b><div class="mut">Экономика</div><div class="mut">38.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Управление финансами в банковской сфере</b><div class="mut">Экономика</div><div class="mut">38.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">350 000 ₽</b></div></td></tr>
+<tr><td><b>Налогообложение организаций</b><div class="mut">Экономика</div><div class="mut">38.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Бухгалтерский учет, анализ и аудит</b><div class="mut">Экономика</div><div class="mut">38.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> ТОЛЬКО на базе 2 ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Информационные системы в бизнесе</b><div class="mut">Бизнес-информатика</div><div class="mut">38.03.05</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Гражданско-правовой</b><div class="mut">Юриспруденция</div><div class="mut">40.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> На базе проф. СПО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">350 000 ₽</b></div></td></tr>
+<tr><td><b>Уголовно-правовой</b><div class="mut">Юриспруденция</div><div class="mut">40.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> На базе проф. СПО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">350 000 ₽</b></div></td></tr>
+<tr><td><b>Начальное образование</b><div class="mut">Педагогическое образование</div><div class="mut">44.03.01</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">320 000 ₽</b></div></td></tr>
+<tr><td><b>Физическая культура</b><div class="mut">Педагогическое образование</div><div class="mut">44.03.01</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Дошкольное образование</b><div class="mut">Педагогическое образование</div><div class="mut">44.03.01</div></td><td><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Практическая психология в образовании</b><div class="mut">Психолого-педагогическое образование</div><div class="mut">44.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Стратегии и коммерция на маркетплейсах</b><div class="mut">Торговое дело</div><div class="mut">38.03.06</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div class="mut">Очная форма: набор закрыт</div></td></tr>
+<tr><td><b>Управление и технологии интернет-продаж на маркетплейсах</b><div class="mut">Менеджмент</div><div class="mut">38.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Интеллектуальные информационные системы и технологии</b><div class="mut">Информационные системы и технологии</div><div class="mut">09.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">380 000 ₽</b></div></td></tr>
+<tr><td><b>Веб-разработка</b><div class="mut">Информационные системы и технологии</div><div class="mut">09.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Тестирование и DevOps</b><div class="mut">Информационные системы и технологии</div><div class="mut">09.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Разработка программного обеспечения (Full-stack разработчик)</b><div class="mut">Информационные системы и технологии</div><div class="mut">09.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">380 000 ₽</b></div></td></tr>
+<tr><td><b>Психология личности</b><div class="mut">Психология</div><div class="mut">37.03.01</div></td><td><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">320 000 ₽</b></div></td></tr>
+<tr><td><b>Организационная психология</b><div class="mut">Психология</div><div class="mut">37.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Дизайн и современное искусство</b><div class="mut">Дизайн</div><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">380 000 ₽</b></div></td></tr>
+<tr><td><b>UX/UI-дизайн</b><div class="mut">Дизайн</div><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Дизайн упаковки и визуальная коммуникация</b><div class="mut">Дизайн</div><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Ландшафтный дизайн</b><div class="mut">Дизайн</div><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Геймдизайн и дизайн игр</b><div class="mut">Дизайн</div><div class="mut">54.03.01</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div></td></tr>
+<tr><td><b>Перевод и межкультурная коммуникация</b><div class="mut">Лингвистика</div><div class="mut">45.03.02</div></td><td><div><b>Онлайн, очно-заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Онлайн, заочная:</b> 11 кл — 4 г 6 мес; СПО / ВО — 3 г 6 мес<br><b class="pr">100 000 ₽<span class="reg"> · регионы РФ 60 000 ₽ · СНГ 50 000 ₽</span></b></div><div><b>Очная, Москва:</b> 11 кл / СПО / ВО — 4 г<br><b class="pr">380 000 ₽</b></div></td></tr></table></div>
+<p class="note" style="margin-top:8px">Есть и отдельная программа «Транзит» (педагогическое образование, перевод внутри вуза после первого семестра). Условия по запросу.</p></div>
+<h2>Связаться с нами</h2>
+<div class="card"><p class="note" style="margin-top:0">Бесплатная консультация для выпускников и родителей. Подберём программу, расскажем про документы и сроки подачи.</p>
+<div class="btnrow"><a class="btn" href="https://t.me/marat_ws">Написать в Telegram</a><a class="btn" href="https://wa.me/message/HVJ7NHFSZW36F1">WhatsApp</a><a class="btn" href="mailto:maratandrejcenko8@mail.ru">Почта</a></div>
+<p class="note" style="margin-top:12px">Telegram: @marat_ws · maratandrejcenko8@mail.ru</p></div>
+<div class="warn">Памятка информационная и не является официальным документом вуза. Цены и условия приёма уточняйте в приёмной комиссии: они могут меняться.</div>
+</div>
+
 </div>
 </body>
 </html>
